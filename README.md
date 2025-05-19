@@ -1,158 +1,132 @@
-# Predicting Demand for Bike Sharing Projects
-
-This repository hosts a machine learning project that focuses on the estimation of hourly bike rental expectations using regression techniques on a bike-sharing dataset. It attempts to assist the operators and planners of a city in ensuring better user satisfaction while making data-driven decisions on operational and strategic planning.  
-
----  
-
-## Goals  
-
-- Develop and assess the performance of a machine learning model capable of predicting the rentals value on an hourly basis.
-
-- Design an interpretable model which can highlight the major drivers of the business for rental demand.
-
-- Assist in attaining the precision needed on operational plans for bike sharing services.
+Here is your cleaned and corrected Markdown document, with special attention paid to the formatting and alignment of the **Model Results** table, general grammar, consistent terminology, and overall Markdown structure.
 
 ---
 
-## Tools Used  
+# Predicting Demand for Bike Sharing Projects
 
-**Software Engineering Tool**
+This repository hosts a machine learning project focused on estimating hourly bike rental demand using regression techniques on a bike-sharing dataset. The goal is to assist city operators and planners in improving user satisfaction through data-driven decisions for operational and strategic planning.
 
-- Python - The first language to address data processing, and machine learning activities.  
+---
 
-**Libraries & Frameworks**
+## Goals
 
-- Pandas - Handling data and analysis procedures.
+* Develop and assess a machine learning model capable of predicting rental demand on an hourly basis.
+* Design an interpretable model that highlights key drivers influencing rental demand.
+* Assist in achieving the precision required for operational planning of bike-sharing services.
 
-- NumPy - Scientific calculation associated tasks.
+---
 
-- Matplotlib & Seaborn - Presentation of analyzed data.
+## Tools Used
 
-- Scikit-learn - Functions for data cleaning, sampling, and training the model on the data followed by evaluation.
+### Software Engineering Tool
 
-- Jupyter Notebook - Exploratory data analysis markdown, and other project documentation.
+* **Python** – Primary language for data processing and machine learning tasks.
+
+### Libraries & Frameworks
+
+* **Pandas** – Data handling and analysis.
+* **NumPy** – Scientific computations.
+* **Matplotlib & Seaborn** – Data visualization.
+* **Scikit-learn** – Data preprocessing, model training, and evaluation.
+* **Jupyter Notebook** – Exploratory data analysis and project documentation.
 
 ---
 
 ## Project Structure
 
 ```
-  
-├── README.md                                                       < - Project Summary and Detailed Documentation 
-  
+├── README.md                             <- Project summary and documentation
 ├── Data
-│   ├── bike_sharing_data.csv                                     < - Dataset
-│   └── Bike Sharing Dataset.pdf                                   < - Description of the Dataset 
-  
+│   ├── bike_sharing_data.csv             <- Dataset
+│   └── Bike Sharing Dataset.pdf          <- Dataset description
 ├── Model
-│   ├── model_GradientBoosting.sav                                 < - Stored Gradient Boosting Model (Pickle) 
-│   └── model_GradientBoosting.joblib                              < - Stored Gradient Boosting Model (Joblib) 
-  
+│   ├── model_GradientBoosting.sav        <- Pickle model
+│   └── model_GradientBoosting.joblib     <- Joblib model
 ├── Notebook
-│   └── Bike-Sharing.ipynb                                         < - Project's Primary Jupyter Notebook 
-  
-└── requirements.txt                                               < - Dependency List 
-  
+│   └── Bike-Sharing.ipynb                <- Main Jupyter notebook
+└── requirements.txt                      <- Dependencies list
 ```
+
 ---
 
 ## Business Problem & Approach
 
-With more than 700 stations and 5,400 bikes, managing Capital Bikeshare in Washington D.C. comes with its challenges. Precise demand forecasting aids in:
+Managing Capital Bikeshare in Washington D.C. with over 700 stations and 5,400 bikes presents challenges. Accurate demand forecasting helps:
 
-- Mitigating over congestion or under capacity at docking stations. 
+* Prevent over-congestion or under-capacity at docking stations.
+* Improve user satisfaction through optimal bike availability.
+* Support policymakers in infrastructure planning.
 
-- Improving user satisfaction through optimal bike usability. 
+### Steps Taken
 
-- Assisting planners and policymakers of the city in planning infrastructural frameworks.
+1. **Data Collection & Understanding**
 
-###  Steps Taken:
+   * Hourly rentals, weather data, and time-based indicators.
 
-1. **Collection & Understanding Data:**
+2. **Data Cleaning & Preparation**
 
-   - Rentals on the hour, weather information, and time indicators.
+   * Handling missing data, preventing leakage, and creating features.
 
-2. **Cleaning & Preparing Data:**
+3. **Feature Engineering**
 
-   - Addressing missing data, eliminating leakage of data integrity, and creation of necessary features.
+   * Key predictors: hour, season, holidays, weather, temperature, “feels like” temperature, and humidity.
 
-3. **Determination of Features:**
- 
-   - Important predictors: hour of the day, season, public holiday, meteorological situation, temperature, “feels like” temperature, and humidity.
+4. **Data Splitting**
 
-4. **Partitioning for analysis:**
- 
-   - 80% for model training and the rest 20% for evaluation.
+   * 80% for training, 20% for evaluation.
 
-5. **Preprocessing** 
+5. **Preprocessing**
 
-   - Standard scaling applied on numerical features while categorical variables underwent encoding.
-  
-6. **Construct and Assess Model:**
-  
-   - Linear Regression, Ridge, Lasso, Decision Tree, Random Forest, Gradient Boosting.
+   * Standard scaling for numerical features and encoding for categorical variables.
 
-7. **Hyperparameter Tuning:**
-  
-   - Optimization with GridSearchCV and RandomizedSearchCV.
- 
-8. **Evaluation:**  
- 
-   - RMSE, MAE, MAPE, and R².
+6. **Modeling**
 
----  
-## Model Evaluation Metrics  
-- **RMSE (Root Mean Squared Error):**  
+   * Algorithms used: Linear Regression, Ridge, Lasso, Decision Tree, Random Forest, Gradient Boosting.
 
-  Overall prediction error.
+7. **Hyperparameter Tuning**
 
-- **MAE (Mean Absolute Error):**  
+   * GridSearchCV and RandomizedSearchCV.
 
-  Average predictive errors incurred.  
+8. **Evaluation**
 
-- **MAPE (Mean Absolute Percentage Error):**  
+   * Metrics: RMSE, MAE, MAPE, R².
 
-  Return accuracy expressed as a percentage.
+---
 
-- **R2 (Coefficient of Determination):**  
+## Model Evaluation Metrics
 
-  Measure of how much of the variance in the actual values can be attributed to the model. It ranges from 0—no explanatory power—to 1, indicating perfect fit. Higher R2 indicates greater explanatory power of the model on the outcome's variability.
+* **RMSE (Root Mean Squared Error):** Measures overall prediction error.
+* **MAE (Mean Absolute Error):** Average of absolute prediction errors.
+* **MAPE (Mean Absolute Percentage Error):** Accuracy expressed as a percentage.
+* **R² (Coefficient of Determination):** Indicates model’s explanatory power (0 to 1).
 
 ---
 
 ## Model Results
 
-| Model              | RMSE    | MAE    | R²      | MAPE    |
+| Model             | RMSE   | MAE   | R²    | MAPE |
+| ----------------- | ------ | ----- | ----- | ---- |
+| Linear Regression | 109.60 | 79.11 | 0.615 | 2.42 |
+| Ridge             | 109.60 | 79.07 | 0.615 | 2.41 |
+| Lasso             | 114.32 | 83.40 | 0.581 | 2.39 |
+| Decision Tree     | 137.21 | 88.83 | 0.396 | 1.08 |
+| Random Forest     | 109.53 | 71.95 | 0.615 | 0.95 |
+| Gradient Boosting | 106.40 | 74.86 | 0.637 | 1.54 |
 
-|--------------------|---------|--------|-------|---------|
-
-| Linear Regression   | 109.60  | 79.11  | 0.615   | 2.42     |
-
-| Ridge               | 109.60  | 79.07  | 0.615   | 2.41     |
-
-| Lasso               | 114.32  | 83.40  | 0.581   | 2.39     |
-
-| Decision Tree       | 137.21  | 88.83  | 0.396   | 1.08     |
-
-| Random Forest       | 109.53  | 71.95  | 0.615   | 0.95     |
-
-| Gradient Boosting   | 106.40  | 74.86  | 0.637   | 1.54     |
-
-The **Gradient Boosting** model achieved the best performance with the lowest RMSE and highest R², suggesting that it explains approximately 64% of variance in the hourly rentals.
+The **Gradient Boosting** model delivered the best performance, with the lowest RMSE and the highest R², indicating it explains approximately 64% of the variance in hourly rentals.
 
 ---
 
 ## Conclusion
 
-- For this project, the Gradient Boosting model is considered the most optimal for predicting the rental demand of bikes on an hourly basis.
-
-- Temperature, the time of day, and the season were observed to significantly influence demand.
-
-- Precise estimates lead to improved operational strategies, increased user satisfaction, and optimized bike-share system management.
+* **Gradient Boosting** was the most effective model for predicting hourly bike rental demand.
+* Key influencing factors included temperature, time of day, and season.
+* Accurate demand forecasting enables better operations, enhances user experience, and optimizes resource management.
 
 ---
 
-## Contant Me
-- Name: Clarinda Puspitajati  
-- E-mail: clarindapj@gmail.com  
-- LinkedIn: [Clarinda's LinkedIn](https://www.linkedin.com/in/clarindapj/)
+## Contact Me
+
+* **Name:** Clarinda Puspitajati
+* **Email:** [clarindapj@gmail.com](mailto:clarindapj@gmail.com)
+* **LinkedIn:** [Clarinda's LinkedIn](https://www.linkedin.com/in/clarindapj/)
