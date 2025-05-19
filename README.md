@@ -1,7 +1,3 @@
-Here is your cleaned and corrected Markdown document, with special attention paid to the formatting and alignment of the **Model Results** table, general grammar, consistent terminology, and overall Markdown structure.
-
----
-
 # Predicting Demand for Bike Sharing Projects
 
 This repository hosts a machine learning project focused on estimating hourly bike rental demand using regression techniques on a bike-sharing dataset. The goal is to assist city operators and planners in improving user satisfaction through data-driven decisions for operational and strategic planning.
